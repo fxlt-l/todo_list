@@ -19,10 +19,12 @@ public class TodoItem {
     private Long id;
     private String title;
     private String description;
+    //完成情况
     private Boolean completed = false;
+    //分类
     private String category;
+    //优先级
     private Integer priority = 1;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
 }
