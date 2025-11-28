@@ -26,7 +26,9 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, TodoItem> implement
             .eq(completed != null,TodoItem::getCompleted, completed)
             .eq(StringUtils.hasText(category),TodoItem::getCategory, category)
             .eq(priority != null,TodoItem::getPriority, priority)
-            .orderByDesc(TodoItem::getCompleted,TodoItem::getPriority,TodoItem::getCreatedAt);
+                .orderByAsc(TodoItem::getCompleted)
+                .orderByAsc(TodoItem::getPriority)
+                .orderByDesc(TodoItem::getCreatedAt);
 
         return baseMapper.selectPage(pageParam, queryWrapper);
     }
