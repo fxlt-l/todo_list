@@ -8,7 +8,7 @@ spring:
   application:
     name: todo_list_backed
   datasource:
-    url: jdbc:h2:mem:tododb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:file:./data/tododb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -25,6 +25,8 @@ spring:
     init:
       platform: h2
       mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
 
 # MyBatis Plus ??
 mybatis-plus:
