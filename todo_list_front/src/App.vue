@@ -1,16 +1,15 @@
 <script setup>
+import TodoContainer from './components/TodoList.vue'
 </script>
 
 <template>
-  <header>
-
-  </header>
-
-  <main>
-
-  </main>
+  <TodoContainer />
 </template>
 
-<style scoped>
-
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background: #f5f7fa;
+}
 </style>

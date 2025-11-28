@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
  * @date 2025/11/26 18:30
  */
 @RestController
+@RequestMapping("/todo")
+@CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 public class TodoController {
     @Autowired
     private TodoService todoService;
@@ -32,7 +34,7 @@ public class TodoController {
     }
     /*添加待办事项*/
     @PostMapping
-    public R<String> addTodo(TodoItem todoItem){
+    public R<String> addTodo(@RequestBody TodoItem todoItem){
         Boolean isSuccess = todoService.save(todoItem);
         return isSuccess ? R.ok("添加成功") : R.error("添加失败");
     }
