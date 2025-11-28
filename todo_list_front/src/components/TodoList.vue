@@ -248,6 +248,12 @@ const formatTime = (timeString) => {
             <el-option label="学习" value="学习" />
             <el-option label="生活" value="生活" />
           </el-select>
+          <el-select v-model="searchParams.priority" placeholder="优先级" style="width: 120px; margin-right: 10px;" @change="loadTodos">
+            <el-option label="全部" :value="null" />
+            <el-option label="高" :value="1" />
+            <el-option label="中" :value="2" />
+            <el-option label="低" :value="3" />
+          </el-select>
           <el-button type="primary" @click="loadTodos">搜索</el-button>
           <el-button @click="resetSearch">重置</el-button>
         </div>
